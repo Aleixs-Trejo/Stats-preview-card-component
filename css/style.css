@@ -1,0 +1,132 @@
+:root{
+  --main-background: hsl(233, 47%, 7%);
+  --card-background: hsl(244, 38%, 16%);
+  --accent: hsl(277, 64%, 61%);
+  --main-heading__stats: hsl(0, 0%, 100%);
+  --main-paragraph: hsla(0, 0%, 100%, 0.75);
+  --stat-headings: hsla(0, 0%, 100%, 0.6);
+  --inter: 'Inter', sans-serif;
+  --lexend: 'Lexend Deca', sans-serif;
+}
+
+html{
+  box-sizing: border-box;
+  font-size: 15px;
+  font-family: var(--inter);
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background-color: var(--main-background);
+  display: flex;
+  min-height: 100vh;
+}
+
+.card{
+  max-width: 80%;
+  margin: auto;
+  width: 320px;
+  overflow: hidden;
+  background-color: var(--card-background);
+  color: var(--main-heading__stats);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__img{
+  height: 240px;
+  background-image: url("./../images/image-header-mobile.jpg");
+  background-size: cover;
+  background-color: var(--accent);
+  background-blend-mode: multiply;
+  background-position: center;
+  opacity: 0.8;
+}
+
+.card__content{
+  padding: 2.2em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.card__title span{
+  color: var(--accent);
+}
+
+.card__description{
+  font-size: 0.8rem;
+  font-family: var(--inter);
+  color: var(--main-paragraph);
+  line-height: 1.8;
+}
+
+.card__data{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.card__data__info{
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: var(--stat-headings);
+  letter-spacing: 2px;
+}
+
+.card__data__count{
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+
+@media screen and (min-width: 1200px) {
+  .card{
+    flex-direction: row-reverse;
+    width: 90%;
+  }
+
+  .card__img{
+    background-image: url("./../images/image-header-desktop.jpg");
+    height: 565px;
+    width: 50%;
+  }
+  
+  .card__content{
+    width: 50%;
+    padding: 5em;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .card__title{
+    font-size: 2.5rem;
+  }
+
+  .card__description{
+    font-size: 1.3rem;
+    line-height: 1.5;
+  }
+
+  .card__data{
+    width: 90%;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.5rem;
+  }
+
+  .card__data__info{
+    font-size: 0.8rem;
+  }
+}
